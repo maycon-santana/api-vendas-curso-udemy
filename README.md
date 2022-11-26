@@ -1,24 +1,24 @@
 # api-vendas-curso-udemy
 API Restful Javascript com Node.js, Typescript, TypeORM etc
 
-# Iniciar a aplicação Node.js com Typescript
+## Iniciar a aplicação Node.js com Typescript
 npm init -y
 
-# ou
+## ou
 
 yarn init -y
 
-# Fazer a instalação do Typescript na pasta do projeto, como uma dependência de desenvolvimento. Como o código final é convertido para javascript antes de ser disponibilizado online, só precisaremos do Typescript em ambiente de desenvolvimento.
+## Fazer a instalação do Typescript na pasta do projeto, como uma dependência de desenvolvimento. Como o código final é convertido para javascript antes de ser disponibilizado online, só precisaremos do Typescript em ambiente de desenvolvimento.
 npm install typescript ts-node-dev @types/node tsconfig-paths -D
 
-# ou
+## ou
 
 yarn add typescript ts-node-dev @types/node tsconfig-paths -D
 
-# Criar o arquivo "tsconfig.json" que conterá as configurações do Typescript, com o comando:
+## Criar o arquivo "tsconfig.json" que conterá as configurações do Typescript, com o comando:
 yarn tsc --init --rootDir src --outDir build --esModuleInterop --resolveJsonModule --lib es6 --module commonjs --allowJs true --noImplicitAny true
 
-# Nosso arquivo tsconfig.json deve estar assim:
+## Nosso arquivo tsconfig.json deve estar assim:
 {
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
@@ -98,7 +98,7 @@ yarn tsc --init --rootDir src --outDir build --esModuleInterop --resolveJsonModu
   ]
 }
 
-# Arquivo .gitignore
+## Arquivo .gitignore
 
 .idea/
 .vscode/
@@ -113,18 +113,18 @@ dist
 uploads/*
 !uploads/.gitkeep
 
-# Criar a pasta src e o primeiro arquivo:
+## Criar a pasta src e o primeiro arquivo:
 mkdir src
 
 touch src/server.ts
 
-# Compilando o Typescript
+## Compilando o Typescript
 
 Para compilar nosso código, precisaremos executar o comando tsc, que irá ler o arquivo tsconfig.json no diretório atual e aplicará a configuração ao compilador TypeScript para gerar o código JavaScript compilado.
 
 npx tsc
 
-# Executar o servidor em desenvolvimento
+## Executar o servidor em desenvolvimento
 
 Usaremos a biblioteca ts-node-dev para execução da aplicação em desenvolvimento.
 
@@ -134,10 +134,10 @@ Incluir o script para rodar o ts-node-dev no arquivo package.json.
   "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/server.ts"
 }
 
-# Executar o servidor:
+## Executar o servidor:
 
 npm run dev
 
-# ou
+## ou
 
 yarn dev
