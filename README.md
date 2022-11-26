@@ -141,3 +141,92 @@ npm run dev
 ## ou
 
 yarn dev
+
+# EditorConfig
+
+## Depois de instalada, ao clicar com o botão direito sobre o explorador de arquivos do projeto vamos selecionar a opção Generate .editorconfig.
+## E a execução dessa opção deve gerar um arquivo .editorconfig com o seguinte conteúdo:
+
+root = true
+
+[*]
+indent_style = space
+indent_size = 2
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+end_of_line = lf
+
+## Instalação e Configuração do ESLint
+
+yarn add -D eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
+
+## Na raiz do seu projeto crie um arquivo .eslintrc com uma configuração inicial do ESLint:
+
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ]
+}
+
+
+## Criar o arquivo .eslintignore:
+
+node_modules
+dist
+build
+/*.js
+
+## Adicionar um script no arquivo package.json para executar o lint:
+
+"scripts": {
+  "test": "echo \"Error: no test specified\" &amp;&amp; exit 1",
+  "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/server.ts",
+  "lint": "eslint . --ext .ts"
+  
+## Esse comando faz basicamente com que o ESLint analise todos os arquivos dentro do projeto, indicando erros detectados de acordo com a configuração.
+
+## Execute o script e verifique que nenhum erro deve ser retornado.
+
+## yarn lint
+## Adicionando regras
+## No arquivo .eslintrc, podemos adicionar o atributo rules ao objeto json para definição de regras.
+
+## Para cada regra podemos atribuir os seguintes valores: "off", "warn" ou "error".
+
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "rules": { 
+    "no-console": "warn"
+  }
+}
+## A regra no-console irá indicar se há algum console.log() perdido pelo código.
+
+## Correção automática
+## O ESLint pode receber um parâmetro --fix para que tente corrigir automaticamente os problemas encontrados.
+
+## Vamos configurar outro script com a opção --fix.
+
+"scripts": {
+  "test": "echo \"Error: no test specified\" &amp;&amp; exit 1",
+  "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/server.ts",
+  "lint": "eslint . --ext .ts",
+  "lint-fix": "eslint . --ext .ts --fix"
+}
+  
