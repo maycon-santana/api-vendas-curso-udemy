@@ -326,3 +326,6 @@ Agora, para importar qualquer arquivo no projeto, inicie o caminho com um dos pa
 
 yarn add express cors express-async-errors
 yarn add -D @types/express @types/cors    
+
+## TypeORM
+yarn add typeorm reflect-metadata pg
