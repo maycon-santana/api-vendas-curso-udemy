@@ -329,3 +329,6 @@ yarn add -D @types/express @types/cors
 
 ## TypeORM
 yarn add typeorm reflect-metadata pg
+
+## Criar conexão com typerom, docker e PGADMIN
+docker run --name postgres -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres
