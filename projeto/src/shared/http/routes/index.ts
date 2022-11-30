@@ -1,4 +1,4 @@
-import { response, Router } from 'express';
+import { Router } from 'express';
 import productsRouter from '../../../modules/products/routes/products.routes';
 
 const routes = Router();
