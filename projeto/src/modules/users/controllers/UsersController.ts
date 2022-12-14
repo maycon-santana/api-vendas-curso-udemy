@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import ListUserService from '../services/ListUserService';
 import CreateUserService from '../services/CreateUserService';
+import usersRouter from './UsersController';
 
 export default class UsersController {
   public async Index(request: Request, response: Response): Promise<Response> {
